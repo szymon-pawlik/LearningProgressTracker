@@ -1,5 +1,5 @@
-﻿// AddGradeForm.cs
-using System;
+﻿using System;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -24,69 +24,93 @@ namespace LearningProgressTracker
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownScore)).BeginInit();
             this.SuspendLayout();
             // 
+            // Form properties
+            // 
+            this.ClientSize = new System.Drawing.Size(320, 180);
+            this.BackColor = Color.FromArgb(240, 240, 240);
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.Text = "Dodaj Ocene";
+            // 
             // labelTask
             // 
             this.labelTask.AutoSize = true;
-            this.labelTask.Location = new System.Drawing.Point(12, 15);
+            this.labelTask.Location = new System.Drawing.Point(12, 20);
             this.labelTask.Name = "labelTask";
-            this.labelTask.Size = new System.Drawing.Size(31, 13);
+            this.labelTask.Size = new System.Drawing.Size(42, 15);
             this.labelTask.TabIndex = 0;
-            this.labelTask.Text = "Task";
+            this.labelTask.Text = "Zadanie";
+            this.labelTask.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+            this.labelTask.ForeColor = Color.FromArgb(70, 70, 70);
             // 
             // comboBoxTask
             // 
             this.comboBoxTask.DropDownStyle = ComboBoxStyle.DropDownList;
             this.comboBoxTask.FormattingEnabled = true;
-            this.comboBoxTask.Location = new System.Drawing.Point(80, 12);
+            this.comboBoxTask.Location = new System.Drawing.Point(120, 18);
             this.comboBoxTask.Name = "comboBoxTask";
-            this.comboBoxTask.Size = new System.Drawing.Size(200, 21);
+            this.comboBoxTask.Size = new System.Drawing.Size(180, 23);
             this.comboBoxTask.TabIndex = 1;
+            this.comboBoxTask.Font = new Font("Segoe UI", 10, FontStyle.Regular);
             // 
             // labelScore
             // 
             this.labelScore.AutoSize = true;
-            this.labelScore.Location = new System.Drawing.Point(12, 42);
+            this.labelScore.Location = new System.Drawing.Point(12, 60);
             this.labelScore.Name = "labelScore";
-            this.labelScore.Size = new System.Drawing.Size(35, 13);
+            this.labelScore.Size = new System.Drawing.Size(38, 15);
             this.labelScore.TabIndex = 2;
-            this.labelScore.Text = "Score";
+            this.labelScore.Text = "Wynik";
+            this.labelScore.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+            this.labelScore.ForeColor = Color.FromArgb(70, 70, 70);
             // 
             // numericUpDownScore
             // 
-            this.numericUpDownScore.Location = new System.Drawing.Point(80, 40);
+            this.numericUpDownScore.DecimalPlaces = 1;
+            this.numericUpDownScore.Increment = 0.5M;
+            this.numericUpDownScore.Minimum = 2.0M;
+            this.numericUpDownScore.Maximum = 5.0M;
+            this.numericUpDownScore.Location = new System.Drawing.Point(120, 58);
             this.numericUpDownScore.Name = "numericUpDownScore";
-            this.numericUpDownScore.Size = new System.Drawing.Size(200, 20);
+            this.numericUpDownScore.Size = new System.Drawing.Size(180, 23);
             this.numericUpDownScore.TabIndex = 3;
+            this.numericUpDownScore.Font = new Font("Segoe UI", 10, FontStyle.Regular);
             // 
             // labelComments
             // 
             this.labelComments.AutoSize = true;
-            this.labelComments.Location = new System.Drawing.Point(12, 68);
+            this.labelComments.Location = new System.Drawing.Point(12, 100);
             this.labelComments.Name = "labelComments";
-            this.labelComments.Size = new System.Drawing.Size(56, 13);
+            this.labelComments.Size = new System.Drawing.Size(72, 15);
             this.labelComments.TabIndex = 4;
-            this.labelComments.Text = "Comments";
+            this.labelComments.Text = "Komentarz";
+            this.labelComments.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+            this.labelComments.ForeColor = Color.FromArgb(70, 70, 70);
             // 
             // textBoxComments
             // 
-            this.textBoxComments.Location = new System.Drawing.Point(80, 65);
+            this.textBoxComments.Location = new System.Drawing.Point(120, 98);
             this.textBoxComments.Name = "textBoxComments";
-            this.textBoxComments.Size = new System.Drawing.Size(200, 20);
+            this.textBoxComments.Size = new System.Drawing.Size(180, 23);
             this.textBoxComments.TabIndex = 5;
+            this.textBoxComments.Font = new Font("Segoe UI", 10, FontStyle.Regular);
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(80, 91);
+            this.buttonSave.Location = new System.Drawing.Point(120, 138);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(200, 23);
+            this.buttonSave.Size = new System.Drawing.Size(180, 30);
             this.buttonSave.TabIndex = 6;
-            this.buttonSave.Text = "Save";
-            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Text = "Zapisz";
+            this.buttonSave.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            this.buttonSave.ForeColor = Color.White;
+            this.buttonSave.BackColor = Color.FromArgb(0, 120, 215);
+            this.buttonSave.FlatStyle = FlatStyle.Flat;
             this.buttonSave.Click += new EventHandler(this.ButtonSave_Click);
             // 
             // AddGradeForm
             // 
-            this.ClientSize = new System.Drawing.Size(292, 126);
+            this.ClientSize = new System.Drawing.Size(320, 180);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.textBoxComments);
             this.Controls.Add(this.labelComments);
@@ -95,12 +119,11 @@ namespace LearningProgressTracker
             this.Controls.Add(this.comboBoxTask);
             this.Controls.Add(this.labelTask);
             this.Name = "AddGradeForm";
-            this.Text = "Add Grade";
+            this.Text = "Dodaj Ocene";
             this.Load += new EventHandler(this.AddGradeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownScore)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         private void AddGradeForm_Load(object sender, EventArgs e)
@@ -111,15 +134,19 @@ namespace LearningProgressTracker
 
         private void ButtonSave_Click(object sender, EventArgs e)
         {
-            // Save the grade to a list or database
+            if (comboBoxTask.SelectedItem == null)
+            {
+                MessageBox.Show("Proszę wybrać zadanie");
+                return;
+            }
+
             string taskTitle = comboBoxTask.SelectedItem.ToString();
-            int score = (int)numericUpDownScore.Value;
+            decimal score = numericUpDownScore.Value;
             string comments = textBoxComments.Text;
 
-            // Example: Add to a static list (in real scenario, you might save to a database)
-            MainForm.Grades.Add(new Grade(taskTitle, score, comments));
+            MainForm.Grades.Add(new Grade(taskTitle, (int)(score * 10), comments));
 
-            MessageBox.Show("Grade added successfully");
+            MessageBox.Show("Ocena dodana prawidłowo");
             this.Close();
         }
 
