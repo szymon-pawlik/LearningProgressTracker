@@ -12,8 +12,7 @@ Learning Progress Tracker to aplikacja desktopowa dla systemu Windows, stworzona
 
 
 ## Demo
-
-
+![image](https://github.com/user-attachments/assets/eab6ac4f-3175-4cd0-965c-e8218e11f327)
 
 ## 🛠️ Technologie i Struktura
 Język: C#
